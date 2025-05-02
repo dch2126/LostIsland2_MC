@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 1704250199}
   m_Layer: 0
   m_Name: H1Teleport
-  m_TagString: Untagged
+  m_TagString: Teleport
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -193,8 +193,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6277789d6dc37459b888bc91ba2cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneFrom: H1
-  sceneTo: H2
+  sceneFrom: 1
+  sceneTo: 2
 --- !u!1 &1831407251
 GameObject:
   m_ObjectHideFlags: 0

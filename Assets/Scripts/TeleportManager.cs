@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class TeleportManager : MonoBehaviour
 {
     public static TeleportManager instance;
@@ -29,22 +30,40 @@ public class TeleportManager : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Debug.Log("Mouse Clicked");
-            CheckTeleport();
+            ClickCheck();
         }
     }
 
-    private void CheckTeleport()
+    private void ClickCheck()
     {
-        //检测是否点击了含有Teleport脚本的2DColider物体
         RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
         if (hit.collider != null)
         {
-            Teleport teleport = hit.collider.GetComponent<Teleport>();
-            if (teleport != null)
+            switch(hit.collider.tag)
             {
-                Debug.Log("Hit!=null");
-                teleport.Transition(teleport.sceneFrom, teleport.sceneTo);
+                case "Teleport":
+                    var teleport = hit.collider.GetComponent<Teleport>();
+                    teleport?.Transition(teleport.sceneFrom, teleport.sceneTo);
+                    break;
+                case "Item":
+                    var item = hit.collider.GetComponent<Item>();
+                    item?.OnClick();
+                    break;
+                default:
+                    Debug.Log("Hit==null");
+                    break;
             }
+            ////检测是否点击了含有Teleport脚本的2DColider物体
+            //Teleport teleport = hit.collider.GetComponent<Teleport>();
+            //if (teleport != null)
+            //{
+            //    Debug.Log("Hit!=null");
+            //    teleport.Transition(teleport.sceneFrom, teleport.sceneTo);
+
+                //string from = teleport.sceneFrom.ToString();
+                //string to = teleport.sceneTo.ToString();
+                //TeleportManager.instance.StartCoroutine(Fade(from,to));
+            //}
         }
     }
 

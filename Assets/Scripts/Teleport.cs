@@ -5,15 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class Teleport : MonoBehaviour
 {
-    public string sceneFrom;
-    public string sceneTo;
+    public SceneName sceneFrom;
+    public SceneName sceneTo;
 
-    public void Transition(string sceneFrom,string sceneTo)
+    public void Transition(SceneName sceneFrom,SceneName sceneTo)
     {
-        
+        string from=sceneFrom.ToString();
+        string to=sceneTo.ToString();
+
         //TeleportManager.instance.StartCoroutine(TeleportManager.instance.FadeIn());
         //TeleportManager.instance.StartCoroutine(TeleportManager.instance.FadeOut());
-        TeleportManager.instance.StartCoroutine(TeleportManager.instance.Fade(sceneFrom, sceneTo));
+        TeleportManager.instance.StartCoroutine(TeleportManager.instance.Fade(from, to));
         //SceneManager.UnloadSceneAsync(sceneFrom);
         //SceneManager.LoadScene(sceneTo, LoadSceneMode.Additive);
     }
