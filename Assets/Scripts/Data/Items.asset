@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDetailsList:
   - itemType: 1
-    itemImage: {fileID: 21300000, guid: d985ec48181584a43a2f75ed962051b3, type: 3}
+    itemSprite: {fileID: 21300000, guid: d985ec48181584a43a2f75ed962051b3, type: 3}
     ItemDescription: 
   - itemType: 2
-    itemImage: {fileID: 21300000, guid: 1c5a65c21a625ba448de6d93a5e81abe, type: 3}
+    itemSprite: {fileID: 21300000, guid: 1c5a65c21a625ba448de6d93a5e81abe, type: 3}
     ItemDescription: 

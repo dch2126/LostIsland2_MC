@@ -12,5 +12,6 @@ public class Item : MonoBehaviour
     public void OnClick()
     {
         InventoryManager.Instance.AddItem(this);
+        gameObject.SetActive(false);
     }
 }

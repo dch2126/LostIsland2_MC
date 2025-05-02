@@ -18,6 +18,6 @@ public class ItemData : ScriptableObject
 public class ItemDetails
 {
     public ItemName itemType;
-    public Sprite itemImage;
+    public Sprite itemSprite;
     public string ItemDescription ="";
 }
